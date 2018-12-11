@@ -165,7 +165,7 @@ void ConvBC01CuDNN<T>::fprop(const T *imgs, const T *filters, int n_imgs,
   }
   if (set_conv_desc) {
     CUDNN_CHECK(cudnnSetConvolution2dDescriptor(
-        conv_desc, pad_y, pad_x, stride_y, stride_x, 1, 1, CUDNN_CONVOLUTION, CUDNN_DATA_INT32
+        conv_desc, pad_y, pad_x, stride_y, stride_x, 1, 1, CUDNN_CONVOLUTION, CUDNN_DATA_FLOAT
     ));
     int n, c, h, w;
     CUDNN_CHECK(cudnnGetConvolution2dForwardOutputDim(
